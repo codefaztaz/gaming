@@ -38,3 +38,7 @@
     font-weight: bold;
     color: #fff;
 }
+
+body {
+    padding-bottom: 50px;
+}

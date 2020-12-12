@@ -1,1 +1,15 @@
-<p>games works!</p>
+<div class="card-columns">
+    <div class="card" *ngFor="let game of gameslist">
+        <h5 class="card-title">
+            {{ game.name}}
+        </h5>
+        <img class="card-img-top" [src]="game.background_image" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text" *ngFor="let platforms of game.platforms"><span class="black">Release on</span> {{ platforms.platform.name}}</p>
+            <p class="card-text"><span class="black">Release date</span> {{ game.released}}</p>
+            <p class="card-text" *ngFor="let genres of game.genres"><span class="black">Genere </span>{{ genres.name}}</p>
+            <p class="card-text"><span class="black">Rating </span>{{ game.rating}}</p>
+
+        </div>
+    </div>
+</div>
