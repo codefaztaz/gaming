@@ -9,7 +9,14 @@
             <p class="card-text"><span class="black">Release date</span> {{ game.released}}</p>
             <p class="card-text" *ngFor="let genres of game.genres"><span class="black">Genere </span>{{ genres.name}}</p>
             <p class="card-text"><span class="black">Rating </span>{{ game.rating}}</p>
-
+            <ul>
+                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
+                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
+                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
+                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
+                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
+                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
+            </ul>
         </div>
     </div>
 </div>
