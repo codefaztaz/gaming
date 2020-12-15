@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute  } from '@angular/router';
 //Services
 import { GamesService } from '../../services/games.service';
 
@@ -10,28 +11,47 @@ import { GamesService } from '../../services/games.service';
 export class GamesComponent implements OnInit {
   public gameslist: any[] = [];
   public genres;
+
   public rating;
+  public page: number = 1;
+  public totalPages;
+  public next;
+  public prev;
+  public number_pages;
+  public count;
+  public nextpage;
 
   constructor(
     private gamesService:GamesService,
+    private router: Router,
   ) {
-    this.gamesService.getListGames().subscribe( (data: any) =>{
+    this.gamesService.getListGames(this.page).subscribe( (data: any) =>{
       console.log(data.results);
+      console.log(data);
       this.gameslist = data.results;
-      this.rating = data.forEach(eachData =>{
-        console.log('rating', eachData.results.rating);
-      });
-      console.log(this.rating);
-
+      this.count = data.results.length;
+      console.log(this.count);
+      this.nextpage = data.next;
+      console.log(this.nextpage);
       
 
-      console.log(data.results.rating);
-    });
-   }
+            
+    
+      
+    
+
+     });
+
+
+      
+ 
+
+  }
 
   ngOnInit(): void {
   }
-
+  
+ 
   listRating()
   {
     // get all rating values from request

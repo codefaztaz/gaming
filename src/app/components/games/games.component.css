@@ -7,3 +7,11 @@
     display: inline;
     margin-right: 5px;
 }
+
+.platform {
+    margin-right: 5px;
+}
+
+.platform:first-child {
+    margin-left: 5px;
+}
