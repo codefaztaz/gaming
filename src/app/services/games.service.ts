@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Game } from '../models/game';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Injectable({
@@ -7,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 })
 export class GamesService {
   public url;
-
+  public game: Game[];
   constructor(
     private http: HttpClient
   ) { }

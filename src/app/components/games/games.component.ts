@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute  } from '@angular/router';
+import { Game } from '../../models/game';
 //Services
 import { GamesService } from '../../services/games.service';
 
@@ -10,6 +11,7 @@ import { GamesService } from '../../services/games.service';
 })
 export class GamesComponent implements OnInit {
   public gameslist: any[] = [];
+  public game: Game;
   public genres;
 
   public rating;
@@ -25,6 +27,8 @@ export class GamesComponent implements OnInit {
     private gamesService:GamesService,
     private router: Router,
   ) {
+    this.game = new Game('', '', '',  1,  );
+    console.log(this.game);
     this.gamesService.getListGames(this.page).subscribe( (data: any) =>{
       console.log(data.results);
       console.log(data);

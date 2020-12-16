@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
+
+// SERVICES
+import { GamesService } from './services/games.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -25,7 +28,10 @@ import { SearchComponent } from './components/search/search.component';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    GamesService
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
