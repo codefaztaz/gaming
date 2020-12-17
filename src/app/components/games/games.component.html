@@ -6,18 +6,12 @@
         <img class="card-img-top" [src]="game.background_image" alt="Card image cap">
         <div class="card-body">
             <!-- <p class="card-text"><span class="black">Release on</span> {{ game.platform.name}}</p> -->
-            <p class="card-text"><span class="black">Release on</span> <span class="platform" *ngFor="let platforms of game.platforms">{{ platforms.platform.name }}</span></p>
+            <p class="card-text"><span class="black">Release on</span> <span class="platform" *ngFor="let platforms of game.platforms" [ngSwitch]="platforms.name"><img class="img-icon" src="assets/xbox.png" *ngSwitchCase="Xbox One"> <img class="img-icon" src="assets/pc.png" *ngSwitchCase="PC"> {{ platforms.platform.name }}</span></p>
+
             <p class="card-text"><span class="black">Release date</span> {{ game.released}}</p>
             <p class="card-text"><span class="black">Genere </span><span class="platform" *ngFor="let genres of game.genres">{{ genres.name}}</span></p>
-            <p class="card-text"><span class="black">Rating </span>{{ game.rating}}</p>
-            <ul>
-                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
-                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
-                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
-                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
-                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
-                <li class="list-star"><span class="fa fa-star-o" data-jest="empty star"></span></li>
-            </ul>
+            <p class="card-text"><span class="black">Rating  <star-rating [value]="game.rating" totalstars="5" checkedcolor="yellow" uncheckedcolor="black" size="24px" readonly="false"></star-rating></span></p>
+
         </div>
     </div>
 </div>

@@ -13,6 +13,10 @@ export class GamesComponent implements OnInit {
   public gameslist: any[] = [];
   public game: Game;
   public genres;
+  public platforms;
+  public pcIcon;
+  public PC;
+  public Xbox;
 
   public rating;
   public page: number = 1;
@@ -27,7 +31,7 @@ export class GamesComponent implements OnInit {
     private gamesService:GamesService,
     private router: Router,
   ) {
-    this.game = new Game('', '', '',  1,  );
+    this.game = new Game('', '', [],  '', [], 1 );
     console.log(this.game);
     this.gamesService.getListGames(this.page).subscribe( (data: any) =>{
       console.log(data.results);
@@ -47,7 +51,7 @@ export class GamesComponent implements OnInit {
      });
 
 
-      
+
  
 
   }
@@ -64,6 +68,14 @@ export class GamesComponent implements OnInit {
 
     // change star color by if else blocks
 
+  }
+
+  showIcons()
+  {
+    if(this.platforms[0].platform.name == 'PC')
+    {
+      let pcIcon = "fa fa-square";
+    }
   }
 
   

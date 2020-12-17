@@ -3,9 +3,9 @@ export class Game{
   constructor(
     public name: string,
     public image: string,
-   // public releaseOn: Array<ReleaseOn>,// do it an array of releaseOn platform
+    public releaseOn: Array<ReleaseOn>,// do it an array of releaseOn platform
     public releaseDate: string,
-  //  public genre: Array<Genres>,// do it an array of genres
+    public genre: Array<Genres>,// do it an array of genres
     public rating: number,
   ){}
 }
