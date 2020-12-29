@@ -16,7 +16,7 @@ export class GamesService {
 
   
 
-  getListGames(page: number):Observable<any>
+  getListGames():Observable<any>
   {
     const  url = 'https://api.rawg.io/api/games?dates=2010-01-01,2020-12-31&page_size=20&page=';
          
@@ -26,7 +26,7 @@ export class GamesService {
     //params = params.append('page', page);    
   // return this.http.get('https://api.rawg.io/api/games?dates=2010-01-01,2020-12-31&page='+page ,'&page_size=20 ');
    
-   return this.http.get(`https://api.rawg.io/api/games?page=${ page }&dates=2010-01-01,2020-12-31&page_size=20`);
+   return this.http.get(`https://api.rawg.io/api/games?&dates=2010-01-01,2020-12-31&page_size=20`);
   }
 
   getGameByGenreAndSeries(term: string)

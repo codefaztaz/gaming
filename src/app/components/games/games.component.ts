@@ -10,13 +10,18 @@ import { GamesService } from '../../services/games.service';
   styleUrls: ['./games.component.css']
 })
 export class GamesComponent implements OnInit {
-  public gameslist: any[] = [];
-  public game: Game;
+  public games: Game;
+  //public game: Game;
   public genres;
   public platforms;
-  public pcIcon;
+  public pcIcon: string = '../assets/pc.png';
   public PC;
-  public Xbox;
+  public Xbox: string = '../assets/xbox.png';
+  public plat: string;
+  public name: string;
+  public title = 'Games component';
+  //public carouselExampleControls: String;
+  //public index: number;
 
   public rating;
   public page: number = 1;
@@ -30,33 +35,49 @@ export class GamesComponent implements OnInit {
   constructor(
     private gamesService:GamesService,
     private router: Router,
-  ) {
-    this.game = new Game('', '', [],  '', [], 1 );
-    console.log(this.game);
-    this.gamesService.getListGames(this.page).subscribe( (data: any) =>{
-      console.log(data.results);
-      console.log(data);
-      this.gameslist = data.results;
-      this.count = data.results.length;
-      console.log(this.count);
-      this.nextpage = data.next;
-      console.log(this.nextpage);
+  ) 
+  {
+    this.games = new Game('', '', [],  '', [], 1 );
+    console.log(this.games);
+    
       
+         
+    
 
-            
+
+  
     
       
     
 
-     });
-
-
+  
 
  
 
   }
 
+
+
   ngOnInit(): void {
+    this.gamesService.getListGames().subscribe( (data: any) =>{
+      //console.log(data.results);
+      console.log(data);
+      this.games = data.results;
+      //this.count = data.results.length;
+      console.log(this.count);
+      //this.nextpage = game.next;
+      console.log(this.nextpage);
+      console.log(data.results);
+      console.log(data.results[0].platforms[0]);
+      data.results.forEach((game) => {
+        //Looping Platform for each game
+        game.platforms.forEach((platform)=> { 
+                //your code here
+                console.log(platform);
+            });
+    });
+
+  });
   }
   
  

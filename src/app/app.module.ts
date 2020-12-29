@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { GamesComponent } from './components/games/games.component';
 import { SearchComponent } from './components/search/search.component';
+import { GameCardComponent } from './components/game-card/game-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchComponent } from './components/search/search.component';
     HomeComponent,
     AboutComponent,
     GamesComponent,
-    SearchComponent
+    SearchComponent,
+    GameCardComponent
   ],
   imports: [
     BrowserModule,

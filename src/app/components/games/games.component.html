@@ -1,21 +1,8 @@
 <div class="card-columns">
-    <div class="card" *ngFor="let game of gameslist">
-        <h5 class="card-title">
-            {{ game.name}}
-        </h5>
-        <img class="card-img-top" [src]="game.background_image" alt="Card image cap">
-        <div class="card-body">
-            <!-- <p class="card-text"><span class="black">Release on</span> {{ game.platform.name}}</p> -->
-            <p class="card-text"><span class="black">Release on</span> <span class="platform" *ngFor="let platforms of game.platforms" [ngSwitch]="platforms.name"><img class="img-icon" src="assets/xbox.png" *ngSwitchCase="Xbox One"> <img class="img-icon" src="assets/pc.png" *ngSwitchCase="PC"> {{ platforms.platform.name }}</span></p>
-
-            <p class="card-text"><span class="black">Release date</span> {{ game.released}}</p>
-            <p class="card-text"><span class="black">Genere </span><span class="platform" *ngFor="let genres of game.genres">{{ genres.name}}</span></p>
-            <p class="card-text"><span class="black">Rating  <star-rating [value]="game.rating" totalstars="5" checkedcolor="yellow" uncheckedcolor="black" size="24px" readonly="false"></star-rating></span></p>
-
-        </div>
-    </div>
+    <app-game-card [games]="games" *ngFor="let games of games"></app-game-card>
 </div>
-<ul class="pagination">
+
+<!-- <ul class="pagination">
     <li class="page-item">
         <a class="page-link" [routerLink]="['/games', prev]">&laquo;</a>
     </li>
@@ -26,4 +13,4 @@
     <li class="page-item">
         <a class="page-link" [routerLink]="['/games', next]">&raquo;</a>
     </li>
-</ul>
+</ul> -->
